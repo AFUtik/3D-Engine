@@ -148,6 +148,7 @@ vec4 spotLight()
 		specular = specAmount * specularLight;
 	};
 
+<<<<<<< HEAD
 	// calculates the intensity of the crntPos based on its angle to the center of the light cone
 	float angle = dot(vec3(0.0f, -1.0f, 0.0f), -lightDirection);
 	float inten = clamp((angle - outerCone) / (innerCone - outerCone), 0.0f, 1.0f);
@@ -161,3 +162,7 @@ void main()
 	// outputs final color
 	FragColor = pointLight();
 }
+=======
+	FragColor = texture(tex0, texCoord) * lightColor * (diffuse + ambient) + texture(tex1, texCoord).r * specular;
+}
+>>>>>>> 4fbdbe108b8d2e90184de5eba04ab2472e4b5e7c
